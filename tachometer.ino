@@ -21,8 +21,8 @@ void loop() {
 
 
 void isr() {
-  if (digitalRead(PIN) == 0) return;  // 
+  if (digitalRead(PIN) == 0) return; // we only need to handle the low to high transition
   end_time = micros();               // take note of the current time. this is the end of the rotation
   duration = end_time - start_time;  // calculate the duration of the rotation
-  start_time = end_time;             // get ready for the next rotaion
+  start_time = end_time;             // get ready for the next rotation
 }
